@@ -1,0 +1,25 @@
+{{template "layout.tmpl" .}}
+
+{{define "content"}}
+\section{ {{.Title}} }
+{{.Scenario}}
+\begin{longtable}{|c|c|p{13cm}|c|}
+    \hline
+    \textbf{No.} & \textbf{Speaker} & \textbf{Segments} & \textbf{Words} \\
+    {{range $index, $element := .Segments}}
+        \hline
+        {{if eq .Prompt.Language 0}}
+        {{inc $index}} & English & {{latex $element.Prompt.Body}} & {{$element.Prompt.Words}} \\
+        \hline
+        \rowcolor{yellow!20} {{inc $index}} & Translation & \raggedleft \texturdu{ {{latex $element.Answer.Body}} } & {{$element.Answer.Words}} \\
+        \hline
+        {{else}}
+        {{inc $index}} & Urdu & \raggedleft \texturdu{ {{latex $element.Prompt.Body}} } & {{$element.Prompt.Words}} \\
+        \hline
+        \rowcolor{yellow!20} {{inc $index}} & Translation & {{latex $element.Answer.Body}} & {{$element.Answer.Words}} \\
+        \hline
+        {{end}}
+        \multicolumn{4}{c}{} \\
+    {{end}}
+\end{longtable}
+{{end}}

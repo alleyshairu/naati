@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage[paper=a4paper, top=1cm, left=1cm]{geometry}
+
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[parfill]{parskip}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+}
+
+\arrayrulecolor{black}
+\setmainlanguage{english}
+\setotherlanguage{urdu}
+\newfontfamily\urdufont[Script=Arabic]{Jameel Noori Nastaleeq}
+
+\begin{document}
+\title{NAATI URDU Sample Dialogues}
+\maketitle
+\tableofcontents
+\newpage
+
+{{range .}}
+    {{block "content" .}}{{end}}
+{{end}}
+
+\end{document}
