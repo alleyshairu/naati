@@ -1,0 +1,15 @@
+## Purpose of the Project
+
+The goal of this project was to convert JSON based dialogues data into a readable LaTeX template for NAATI (National Accreditation Authority for Translators and Interpreters) exam preparation.
+The final output is a LaTeX file containing list dialogues that can be compiled into a single PDF.
+
+## Features
+- Converts raw JSON dialogues into a single LaTeX document.
+- The LaTeX template follows the official NAATI format (highlighting the speaker and words count).
+
+## How It Works
+
+1. The input is a JSON file containing structured dialogues.
+2. JSON content parsing.
+3. The content is then mapped into a LaTeX template.
+4. The output is a LaTeX file (`.tex`) that can be compiled into a PDF using XeLaTeX.
