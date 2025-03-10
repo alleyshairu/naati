@@ -51,9 +51,9 @@ func (seg *Segment) UnmarshalJSON(data []byte) error {
 	lang := whatlanggo.DetectLang(temp.Prompt)
 
 	var promptLang, answerLang Language
-	if lang.Iso6391() == "ur" {
+	if lang.Iso6393() == "urd" || lang.Iso6393() == "skr" {
 		promptLang, answerLang = Urdu, English
-	} else {
+	} else if lang.Iso6393() == "eng" {
 		promptLang, answerLang = English, Urdu
 	}
 
